@@ -21,5 +21,5 @@ function sumFibonacci(num: number) {
     console.log(result);
 }
 sumFibonacci(7);
-console.log("aaaaa");
+
 
