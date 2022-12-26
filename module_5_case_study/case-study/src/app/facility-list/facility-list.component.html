@@ -1,1 +1,92 @@
-<p>facility-list works!</p>
+<body style="background-size:cover ;background-repeat: no-repeat">
+<div replace="~{/home::header}"></div>
+<div style="text-align: center;margin: 5px">
+  <h1>List Facility</h1>
+
+  <a href="/facilities/create">
+    <button style="margin: 10px" type="button" class="btn btn-info">Add New Facility</button>
+  </a>
+
+  <form action="/facilities">
+    <input type="text" name="nameSearch" placeholder="Search name">
+    <select name="facilityType">
+      <option value="" selected>Type</option>
+      <option ></option>
+    </select>
+    <input type="submit" value="Search">
+  </form>
+</div>
+<table class="table table-dark" style="text-align: center" border="1">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Area</th>
+    <th>Price</th>
+    <th>Max People</th>
+    <th>Standard Room</th>
+    <th>Description Other Convenience</th>
+    <th>Pool Area</th>
+    <th>Floors</th>
+    <th>Facility Free</th>
+    <th>Rent Type</th>
+    <th>Facility Type</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><a class="btn btn-danger" href="@{/facilities/edit/__${facility.id}__/__${facility.facilityType.id}__}">edit</a></td>
+    <td>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#deleteModal"
+              attr="onclick=|infoDelete('${facility.id}','${facility.name}')|">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Facility</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Are you sure you want to delete <span style="color: red" id="nameDelete"></span>?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <form action="/facilities/delete">
+          <input type="text" name="idDelete" id="id" hidden>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function infoDelete(id, name) {
+    document.getElementById("nameDelete").innerText = name;
+    document.getElementById("id").value = id;
+  }
+</script>
