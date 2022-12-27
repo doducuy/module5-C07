@@ -1,0 +1,22 @@
+<h1>Create Student</h1>
+<div>
+  <p>Name:</p>
+  <input type="text" #name>
+</div>
+<div>
+  <p>Gender:</p>
+  <input type="radio" value="1" #gd1>Nam
+  <input type="radio" value="0" #gd2>Nữ
+  <input type="radio" value="2" #gd3>LGBT
+</div>
+<div>
+  <p>Point:</p>
+  <input type="text" #point>
+</div>
+<div>
+  <p></p>
+  <button type="button" (click)="createStudent(name.value,
+gd1.checked ? gd1.value : gd2.checked ? gd2.value : gd3.checked ? gd3.value:'', point.value)">Create
+  </button>
+</div>
+

@@ -11,5 +11,7 @@ export class CustomerListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+addNew(n1:number,n2:number){
 
+}
 }
