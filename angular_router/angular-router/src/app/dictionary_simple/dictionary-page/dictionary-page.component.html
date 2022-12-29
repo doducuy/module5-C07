@@ -1,0 +1,7 @@
+<p>dictionary-page </p>
+<div>
+  <span *ngFor="let item of dictionaryList">
+  <button class="btn btn-outline-info" [routerLink]="['/detail',item.name]">{{item.name}}</button>
+</span>
+</div>
+
