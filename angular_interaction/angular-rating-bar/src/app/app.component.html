@@ -1,9 +1,0 @@
-<h1>Rating Bar</h1>
-<div *ngIf="ratingUnitList">
-  <button style="margin-left: 3px"  *ngFor="let item of ratingUnitList" (click)="changeBackGround(item.vote)"
-          [ngStyle]="{'background' : item.vote <=value ? 'pink' : ''}">
-    {{item.vote}}
-  </button>
-  <h3>Bạn đã đánh giá : {{value}} điểm</h3>
-</div>
-

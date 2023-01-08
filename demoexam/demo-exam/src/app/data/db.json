@@ -1,0 +1,248 @@
+{
+  "customer": [
+    {
+      "id": 6,
+      "name": "uyb",
+      "gender": 0,
+      "rank": 10,
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 9,
+      "name": "uyb",
+      "gender": 0,
+      "rank": 10,
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 11,
+      "name": "vinh",
+      "gender": "2",
+      "rank": "1",
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 12,
+      "name": "vinhmap",
+      "gender": "1",
+      "rank": "1",
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 13,
+      "name": "hihi",
+      "gender": "0",
+      "rank": "2",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 14,
+      "name": "toang",
+      "gender": "0",
+      "rank": "3",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 15,
+      "name": "ciu be",
+      "gender": "0",
+      "rank": "2",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 16,
+      "name": "ciu beeeeeeeeee",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 17,
+      "name": "aaa",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 18,
+      "name": "vinhsapve",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 19,
+      "name": "asd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 20,
+      "name": "asd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 21,
+      "name": "asdasd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 22,
+      "name": "asdasd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 23,
+      "name": "asd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 24,
+      "name": "123",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 25,
+      "name": "zdfcz",
+      "gender": "0",
+      "rank": "12",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 26,
+      "name": "asd",
+      "gender": "0",
+      "rank": "asd",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 27,
+      "name": "asd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 28,
+      "name": "ghfnfn",
+      "gender": "0",
+      "rank": "nvn",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 29,
+      "name": "hjgj",
+      "gender": "0",
+      "rank": "jghjgh",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 30,
+      "name": "ngffgn",
+      "gender": "0",
+      "rank": "hfhfhf",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 31,
+      "name": "asd",
+      "gender": "0",
+      "rank": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Platinum"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<h2 style="text-align: center; color: brown">Danh Sách Lô Hàng</h2>
+<button class="btn btn-outline-success" routerLink="/lohang/create">(+) Nhập hàng</button>
+<div class="d-flex align-items-center mt-2">
+  <input class="form-control w-auto" placeholder="Tên Sản Phẩm" #tenSanPham>
+  <input class="form-control w-auto" placeholder="Ngày Hết Hạn" #ngayHetHan >
+  <button class="btn btn-outline-success" (click)="search(tenSanPham.value, ngayHetHan.value)">Search</button>
+</div>
+<div>
+  <table class="table table-success">
+    <thead>
+    <tr>
+      <th>Mã lo hàng</th>
+      <th>Tên sản phẩm</th>
+      <th>Giá tiền</th>
+      <th>Đơn vị</th>
+      <th>Số lượng</th>
+      <th>Ngày nhập hàng</th>
+      <th>Ngày sản xuất</th>
+      <th>Ngày hết hạn</th>
+      <th>Sửa</th>
+      <th>Xóa</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="loHangList">
+    <tr *ngFor="let item of loHangList| paginate:{itemsPerPage: 5, currentPage: page}, let i = index">
+      <td>{{item.maLoHang}}</td>
+      <td>{{item.sanPham.tenSanPham}}</td>
+      <td>{{item.sanPham.giaTien}}</td>
+      <td>{{item.sanPham.donVi}}</td>
+      <td>{{item.soLuong}}</td>
+      <td>{{item.ngayNhapHang}}</td>
+      <td>{{item.ngaySanXuat}}</td>
+      <td>{{item.ngayHetHan}}</td>
+      <td>
+        <button class="btn btn-outline-success" [routerLink]="['/lohang/edit',item.id]">Edit</button>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-success"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="infoDelete(item)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--  Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p *ngIf="loHang">Bạn có muốn xóa thông tin lô hàng <span style="color:red">{{loHang.sanPham.tenSanPham}}</span>
+          nhập ngày <span style="color: red">{{loHang.ngayNhapHang}}</span> không?</p>
+        </div>
+        <div class="modal-footer">
+          <button id="close-modal-delete" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không
+          </button>
+          <button type="button" class="btn btn-success" (click)="deleteLohang()"
+                  data-bs-dismiss="modal">Có
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

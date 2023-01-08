@@ -1,0 +1,30 @@
+<h2 style="text-align: center">Edit Customer</h2>
+<div>
+  <button class="btn btn-outline-success" routerLink="/customer/list">Back List</button>
+</div>
+<form *ngIf="reactiveFormEdit" [formGroup]="reactiveFormEdit" style="margin-left: 30%; margin-right: 30%" (ngSubmit)="saveEdit()">
+  <input type="hidden" formControlName="id">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input formControlName="name" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Gender</label>
+    <select class="form-control" formControlName="gender">
+      <option value="0">Nữ</option>
+      <option value="1">Nam</option>
+      <option value="2">LGBT</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Rank</label>
+    <input formControlName="rank" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Type</label>
+    <select class="form-control" formControlName="customerType" [compareWith]="compId">
+      <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-outline-danger">Save!</button>
+</form>

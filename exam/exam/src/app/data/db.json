@@ -1,0 +1,102 @@
+{
+  "lohang": [
+    {
+      "id": 1,
+      "maLoHang": "LH-0001",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "Sting",
+        "xuatXu": "Trung Quoc",
+        "giaTien": 100,
+        "donVi": "Thung"
+      },
+      "soLuong": 5,
+      "ngayNhapHang": "10-10-1022",
+      "ngaySanXuat": "10-05-2022",
+      "ngayHetHan": "10-11-2022"
+    },
+    {
+      "id": 3,
+      "maLoHang": "LH-0002",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "Coca",
+        "xuatXu": "Trung Quoc",
+        "giaTien": 100,
+        "donVi": "Thung"
+      },
+      "soLuong": 5,
+      "ngayNhapHang": "10-10-1022",
+      "ngaySanXuat": "10-05-2022",
+      "ngayHetHan": "10-11-2022"
+    },
+    {
+      "id": 4,
+      "maLoHang": "LH-1113",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "Sting",
+        "xuatXu": "Trung Quoc",
+        "giaTien": 100,
+        "donVi": "Thung"
+      },
+      "soLuong": "1",
+      "ngayNhapHang": "2023-03-07",
+      "ngaySanXuat": "2022-12-30",
+      "ngayHetHan": "2023-01-29"
+    },
+    {
+      "id": 5,
+      "maLoHang": "LH-1111",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "Sting",
+        "xuatXu": "Trung Quoc",
+        "giaTien": 100,
+        "donVi": "Thung"
+      },
+      "soLuong": "1",
+      "ngayNhapHang": "2023-01-12",
+      "ngaySanXuat": "2022-12-31",
+      "ngayHetHan": "2022-12-27"
+    },
+    {
+      "id": 8,
+      "maLoHang": "LH-7894",
+      "sanPham": {
+        "id": 1,
+        "tenSanPham": "Sting",
+        "xuatXu": "Trung Quoc",
+        "giaTien": 100,
+        "donVi": "Thung"
+      },
+      "soLuong": "2",
+      "ngayNhapHang": "2023-01-08",
+      "ngaySanXuat": "2022-12-31",
+      "ngayHetHan": "2023-01-20"
+    }
+  ],
+  "sanPham": [
+    {
+      "id": 1,
+      "tenSanPham": "Sting",
+      "xuatXu": "Trung Quoc",
+      "giaTien": 100,
+      "donVi": "Thung"
+    },
+    {
+      "id": 2,
+      "tenSanPham": "Huda",
+      "xuatXu": "VN",
+      "giaTien": 100,
+      "donVi": "Thung"
+    },
+    {
+      "id": 3,
+      "tenSanPham": "7Up",
+      "xuatXu": "Lao",
+      "giaTien": 100,
+      "donVi": "Thung"
+    }
+  ]
+}

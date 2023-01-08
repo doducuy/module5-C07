@@ -1,0 +1,58 @@
+<h2 style="text-align: center">Create Customer</h2>
+<div>
+  <button class="btn btn-outline-success" routerLink="/customer/list">Back List</button>
+</div>
+<form *ngIf="reactiveFormCreate" [formGroup]="reactiveFormCreate" style="margin-left: 30%; margin-right: 30%"
+      (ngSubmit)="saveCreate()">
+  <input type="hidden" formControlName="id">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input formControlName="name" class="form-control"
+           [ngClass]="reactiveFormCreate.controls.name.valid ? 'is-valid': 'is-invalid'">
+    <div class="invalid-feedback">
+      <div *ngIf="reactiveFormCreate.controls.name.hasError('required') &&
+                                     reactiveFormCreate.controls.name.touched" style="color: red">
+        Tên không được bỏ trống
+      </div>
+    </div>
+    <div class="invalid-feedback">
+      <div *ngIf="reactiveFormCreate.controls.name.hasError('pattern') &&
+      reactiveFormCreate.controls.name.touched" style="color:red">
+        Tên phải là chữ và có 3 đến 50 kí tự
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Gender</label>
+    <select class="form-control" formControlName="gender">
+      <option value="0">Nữ</option>
+      <option value="1">Nam</option>
+      <option value="2">LGBT</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Rank</label>
+    <input formControlName="rank" class="form-control" [ngClass]="reactiveFormCreate.controls.rank.valid?'is-valid': 'is-invalid' ">
+    <div class="invalid-feedback">
+      <div *ngIf="reactiveFormCreate.controls.rank.hasError('minlength') &&
+      reactiveFormCreate.controls.rank.touched" style="color: red">
+        Tối thiểu 5 ký tự
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Type</label>
+    <select class="form-control" formControlName="customerType" [compareWith]="cpw">
+      <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
+    </select>
+  </div>
+  <div>
+    <span>
+      <button type="submit" class="btn btn-outline-success" [disabled]="reactiveFormCreate.invalid">Save!</button>
+    </span>
+    <span>
+      <button type="button" class="btn btn-outline-success" (click)="reset()">Reset</button>
+    </span>
+
+  </div>
+</form>

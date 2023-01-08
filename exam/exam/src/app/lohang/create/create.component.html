@@ -1,0 +1,78 @@
+<h2 style="text-align: center">Nhập Lô Hàng</h2>
+<div>
+  <button class="btn btn-outline-success" routerLink="/lohang/list">Back List</button>
+</div>
+<form *ngIf="reactiveFormCreate" [formGroup]="reactiveFormCreate" style="margin-left: 30%; margin-right: 30%"
+      (ngSubmit)="saveCreate()">
+  <input type="hidden" formControlName="id">
+  <div>
+    <label>Mã Lô Hàng</label>
+    <input formControlName="maLoHang" class="form-control">
+    <div *ngIf="reactiveFormCreate.controls.maLoHang.hasError('pattern') &&
+                                     reactiveFormCreate.controls.maLoHang.touched" style="color: red">
+      Mã lô hàng chưa đúng định dạng: LH-XXXX (X là số nguyên dương)!
+    </div>
+    <div *ngIf="reactiveFormCreate.controls.maLoHang.hasError('required') &&
+                                     reactiveFormCreate.controls.maLoHang.touched" style="color: red">
+      Không được để trống!
+    </div>
+  </div>
+  <div>
+    <label>Sản phẩm</label>
+    <select class="form-control" formControlName="sanPham" [compareWith]="cpw">
+      <option *ngFor="let item of sanPhamList" [ngValue]="item">{{item.tenSanPham}}</option>
+    </select>
+    <div *ngIf="reactiveFormCreate.controls.sanPham.hasError('required') &&
+                                     reactiveFormCreate.controls.sanPham.touched" style="color: red">
+      Sản phẩm k được để trống!
+    </div>
+  </div>
+  <div>
+    <label>Số Lượng</label>
+    <input formControlName="soLuong" class="form-control">
+    <div *ngIf="reactiveFormCreate.controls.soLuong.hasError('min') &&
+                                     reactiveFormCreate.controls.soLuong.touched" style="color: red">
+      Số lượng phải là số nguyên dương!
+    </div>
+    <div *ngIf="reactiveFormCreate.controls.soLuong.hasError('required') &&
+                                     reactiveFormCreate.controls.soLuong.touched" style="color: red">
+      Không được để trống!
+    </div>
+  </div>
+  <div>
+    <label>Ngày Nhập Hàng</label>
+    <input formControlName="ngayNhapHang" class="form-control" type="date">
+    <div *ngIf="reactiveFormCreate.controls.ngayNhapHang.hasError('required') &&
+                                     reactiveFormCreate.controls.ngayNhapHang.touched" style="color: red">
+      K được để trống!
+    </div>
+  </div>
+  <div>
+    <label>Ngày sản xuất</label>
+    <input formControlName="ngaySanXuat" class="form-control" type="date">
+    <div *ngIf="reactiveFormCreate.controls.ngaySanXuat.hasError('required') &&
+                                     reactiveFormCreate.controls.ngaySanXuat.touched" style="color: red">
+      K được để trống!
+    </div>
+  </div>
+  <div>
+    <label>Ngày hết hạn</label>
+    <input formControlName="ngayHetHan" class="form-control" type="date">
+    <div *ngIf="reactiveFormCreate.controls.ngayHetHan.hasError('required') &&
+                                     reactiveFormCreate.controls.ngayHetHan.touched" style="color: red">
+      K được để trống!
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Type</label>
+  </div>
+  <div>
+    <span>
+      <button type="submit" class="btn btn-outline-success" [disabled]="reactiveFormCreate.invalid">Save!</button>
+    </span>
+    <span>
+      <button type="button" class="btn btn-outline-success" (click)="reset()">Reset</button>
+    </span>
+
+  </div>
+</form>

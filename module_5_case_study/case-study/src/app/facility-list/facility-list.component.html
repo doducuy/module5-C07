@@ -22,7 +22,7 @@
     <th>STT</th>
     <th>Name</th>
     <th>Area</th>
-    <th>Price</th>
+    <th>Cost</th>
     <th>Max People</th>
     <th>Standard Room</th>
     <th>Description Other Convenience</th>
@@ -36,19 +36,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr *ngFor="let item of facilityList; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.area}}</td>
+    <td>{{item.cost}}</td>
+    <td>{{item.maxPeople}}</td>
+    <td>{{item.standardRoom}}</td>
+    <td>{{item.descriptionOtherConvenience}}</td>
+    <td>{{item.poolArea}}</td>
+    <td>{{item.numberOfFloor}}</td>
+    <td>{{item.facilityFree}}</td>
+    <td *ngIf="item.rentTypeId">{{item.rentTypeId.name}}</td>
+    <td *ngIf="item.facilityTypeId">{{item.facilityTypeId.name}}</td>
     <td><a class="btn btn-danger" href="@{/facilities/edit/__${facility.id}__/__${facility.facilityType.id}__}">edit</a></td>
     <td>
       <!-- Button trigger modal -->
