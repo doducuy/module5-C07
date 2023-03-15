@@ -1,0 +1,106 @@
+<h2 style="text-align: center; color: brown">Danh Sách Công Cụ Dụng Cụ</h2>
+<button class="btn btn-outline-success" routerLink="/congcudungcu/create">(+) Thêm mới</button>
+<div class="d-flex align-items-center mt-2">
+  <input class="form-control w-auto" placeholder="Tên CCDC" #tenCCDC>
+  <input class="form-control w-auto" placeholder="Hãng sản xuất" #hangsanxuat>
+  <button class="btn btn-outline-success" (click)="search(tenCCDC.value, hangsanxuat.value)">Search</button>
+</div>
+<div>
+  <table class="table table-success" style="min-height: 205px">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Mã CCDC</th>
+      <th>Tên CCDC</th>
+      <th>Hãng sản xuất</th>
+      <th>Đơn vị</th>
+      <th>Số lượng</th>
+      <th>Chức năng</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="congCuDungCuList">
+    <tr *ngFor="let item of congCuDungCuList, let i = index">
+      <td>{{i+1}}</td>
+      <td>{{item.maCongCuDungCu}}</td>
+      <td>{{item.tenCongCuDungCu}}</td>
+      <td>{{item.hangSanXuat}}</td>
+      <td>{{item.donVi}}</td>
+      <td>{{item.soLuong}}</td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-success"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="infoMuon(item)">
+          Mượn
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--  Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Màn hình mượn CCDC</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="congCuDungCu">
+            <table>
+              <tr>
+                <td>Nhân viên mượn:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mã CCDC:</td>
+                <td>{{congCuDungCu.maCongCuDungCu}}</td>
+              </tr>
+              <tr>
+                <td>Tên CCDC:</td>
+                <td>{{congCuDungCu.tenCongCuDungCu}}</td>
+              </tr>
+              <tr>
+                <td>Hãng sản xuất:</td>
+                <td>{{congCuDungCu.hangSanXuat}}</td>
+              </tr>
+              <tr>
+                <td>Đơn vị:</td>
+                <td>{{congCuDungCu.donVi}}</td>
+              </tr>
+              <tr>
+                <td>Số lượng trong kho:</td>
+                <td>{{soLuongTrongKho}}</td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <label>Số lượng mượn: <input class="form-control w-auto" placeholder="Số lượng mượn" #slm></label>
+          <button id="close-modal-delete" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy
+          </button>
+          <button type="button" class="btn btn-success"
+                  data-bs-dismiss="modal" (click)="muonCongCu(slm.value)">Đồng ý
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="(pageNumber) > 0?'':'disabled'">
+        <a class="page-link"
+           (click)="goToPage(nameSearch,hangSearch,pageNumber -1)">Trước</a>
+      </li>
+      <li class="page-item" *ngFor="let pageIndex of [].constructor( pageTotal), index as i"
+          [ngClass]="pageNumber == i ? 'active' : ''">
+        <a class="page-link"
+           (click)="goToPage(nameSearch,hangSearch, i)">{{i + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" [ngClass]="(pageNumber-1) < (pageTotal-2)?'':'disabled'"
+           (click)="goToPage(nameSearch,hangSearch,  pageNumber + 1)">Sau</a>
+      </li>
+    </ul>
+  </nav>
+</div>
